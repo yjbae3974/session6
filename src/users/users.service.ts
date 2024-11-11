@@ -27,6 +27,7 @@ export class UsersService {
     const newUser = this.usersRepository.create({
       username: createUserDto.username,
       password: hashedPassword,
+      role: createUserDto.role, // role을 dto에서 가져와 create를 할 때 넣어줍니다.
     });
 
     return this.usersRepository.save(newUser);

@@ -14,6 +14,8 @@ import { Board } from './board.entity';
 import { AuthGuard } from '@nestjs/passport';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
+import { Roles } from 'src/common/decorator/role.decorator';
+import { RolesGuard } from 'src/common/guard/roles.guard';
 
 @Controller('boards')
 export class BoardsController {
@@ -50,9 +52,10 @@ export class BoardsController {
     return this.boardsService.update(id, updateBoardDto);
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  @Roles('admin') // Roles 데코레이터 추가
+  @UseGuards(AuthGuard('jwt'), RolesGuard) // RolesGuard 적용
   @Delete(':id')
-  async remove(@Param('id') id: number): Promise<void> {
+  remove(@Param('id') id: number): Promise<void> {
     return this.boardsService.remove(id);
   }
 }
