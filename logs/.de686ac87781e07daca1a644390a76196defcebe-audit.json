@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 10
+    },
+    "auditLog": "/Users/baeyeonjun/Desktop/NestJS/session6/session6/logs/.de686ac87781e07daca1a644390a76196defcebe-audit.json",
+    "files": [
+        {
+            "date": 1731325414253,
+            "name": "/Users/baeyeonjun/Desktop/NestJS/session6/session6/logs/2024-11-11.error.log",
+            "hash": "eb40a9476b0a73925fdacde1d159e9561d2addfbe73c5db1931f70fce5da1bfa"
+        }
+    ],
+    "hashType": "sha256"
+}

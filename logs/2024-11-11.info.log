@@ -1,0 +1,46 @@
+2024. 11. 11. 오후 8:46:29    WARN  POST /auth/login 404 ::1 51ms Anonymous
+[REQUEST] Params: {"0":"auth/login"} Query: {} Body: {"username":"testuser1","password":"testpassword"} Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"a9e22eb3-0e5c-41aa-88d7-f4ccb2f671e9","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+[RESPONSE] Status:404
+Body: {"message":"User with username testuser1 not found","error":"Not Found","statusCode":404}
+2024. 11. 11. 오후 8:46:55     LOG  POST /users 201 ::1 126ms Anonymous
+[REQUEST] Params: {"0":"users"} Query: {} Body: {"username":"testuser1","password":"testpassword"}
+2024. 11. 11. 오후 8:47:26    WARN  PATCH /users 404 ::1 1ms Anonymous
+[REQUEST] Params: {"0":"users"} Query: {} Body: {"username":"testuser1","password":"testpassword","role":"user"} Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"7498fa21-a17d-44f9-b030-864d189980f5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"86"}
+[RESPONSE] Status:404
+Body: {"message":"Cannot PATCH /users","error":"Not Found","statusCode":404}
+2024. 11. 11. 오후 8:47:31    WARN  PUT /users 404 ::1 1ms Anonymous
+[REQUEST] Params: {"0":"users"} Query: {} Body: {"username":"testuser1","password":"testpassword","role":"user"} Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"8af1d819-86ce-465f-8c78-daaa351e5dd4","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"86"}
+[RESPONSE] Status:404
+Body: {"message":"Cannot PUT /users","error":"Not Found","statusCode":404}
+2024. 11. 11. 오후 8:47:39     LOG  POST /users 201 ::1 107ms Anonymous
+[REQUEST] Params: {"0":"users"} Query: {} Body: {"username":"testuser2","password":"testpassword","role":"user"}
+2024. 11. 11. 오후 8:48:38     LOG  POST /auth/login 201 ::1 118ms Anonymous
+[REQUEST] Params: {"0":"auth/login"} Query: {} Body: {"username":"testuser2","password":"testpassword"}
+2024. 11. 11. 오후 8:50:38    WARN  POST /boards/1 404 ::1 2ms Anonymous
+[REQUEST] Params: {"0":"boards/1"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"} Headers: {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsInN1YiI6MiwiaWF0IjoxNzMxMzI1NzE4LCJleHAiOjE3MzEzMjkzMTh9.7-g_LeP_ezMqEwXmZ9BXpa0afbBmDsPoGG9OuXwhiHY","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"9986efc8-cab8-47b5-8c89-b63b34ceada5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"72"}
+[RESPONSE] Status:404
+Body: {"message":"Cannot POST /boards/1","error":"Not Found","statusCode":404}
+2024. 11. 11. 오후 8:50:46     LOG  POST /boards 201 ::1 29ms testuser2
+[REQUEST] Params: {"0":"boards"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"}
+2024. 11. 11. 오후 9:04:09     LOG  GET /boards/1 200 ::1 27ms testuser2
+[REQUEST] Params: {"0":"boards/1"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"}
+2024. 11. 11. 오후 9:04:27     LOG  POST /users 201 ::1 109ms Anonymous
+[REQUEST] Params: {"0":"users"} Query: {} Body: {"username":"admin","password":"testpassword","role":"admin"}
+2024. 11. 11. 오후 9:04:43     LOG  POST /auth/login 201 ::1 106ms Anonymous
+[REQUEST] Params: {"0":"auth/login"} Query: {} Body: {"username":"admin","password":"testpassword"}
+2024. 11. 11. 오후 9:04:57    WARN  DELETE /boards 404 ::1 1ms Anonymous
+[REQUEST] Params: {"0":"boards"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"} Headers: {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjozLCJpYXQiOjE3MzEzMjY2ODMsImV4cCI6MTczMTMzMDI4M30.GiSU-uhV21bojgBV8xSVdrj7CS7VBK83sccRUyEMKyo","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"ef9a1900-420e-496b-a383-e4688250ed15","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"72"}
+[RESPONSE] Status:404
+Body: {"message":"Cannot DELETE /boards","error":"Not Found","statusCode":404}
+2024. 11. 11. 오후 9:05:03    WARN  DELETE /boards/1 403 ::1 4ms admin
+[REQUEST] Params: {"0":"boards/1"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"} Headers: {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjozLCJpYXQiOjE3MzEzMjY2ODMsImV4cCI6MTczMTMzMDI4M30.GiSU-uhV21bojgBV8xSVdrj7CS7VBK83sccRUyEMKyo","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"2f0c4285-db98-4ef2-81e4-490032abfb57","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"72"}
+[RESPONSE] Status:403
+Body: {"message":"Forbidden resource","error":"Forbidden","statusCode":403}
+2024. 11. 11. 오후 9:06:06    WARN  DELETE /boards/1 403 ::1 6ms admin
+[REQUEST] Params: {"0":"boards/1"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"} Headers: {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjozLCJpYXQiOjE3MzEzMjY2ODMsImV4cCI6MTczMTMzMDI4M30.GiSU-uhV21bojgBV8xSVdrj7CS7VBK83sccRUyEMKyo","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","postman-token":"920eb548-1a7b-444d-8814-cd16427b88a2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"72"}
+[RESPONSE] Status:403
+Body: {"message":"Forbidden resource","error":"Forbidden","statusCode":403}
+2024. 11. 11. 오후 9:07:47     LOG  POST /auth/login 201 ::1 105ms Anonymous
+[REQUEST] Params: {"0":"auth/login"} Query: {} Body: {"username":"admin","password":"testpassword"}
+2024. 11. 11. 오후 9:07:57     LOG  DELETE /boards/1 200 ::1 14ms admin
+[REQUEST] Params: {"0":"boards/1"} Query: {} Body: {"title":"made by testuser2","content":"안녕하세요"}
